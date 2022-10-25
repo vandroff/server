@@ -29,7 +29,7 @@ const serve = http.createServer((req, res) => {
 
   fs.readFile(filePath, (err, content) => {
     if (err) {
-      if (err.code === 'Error No Entity') {
+      if (err.code === 'enoent') {
         res.writeHead(400)
         res.end(`Error 404 Not Found`)
       } else {
